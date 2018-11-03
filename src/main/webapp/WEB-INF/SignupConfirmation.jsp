@@ -1,7 +1,13 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+=======
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+>>>>>>> 233d75cef8c5d1ba4f03083ae1fd53219ff2324c
 =======
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -24,6 +30,9 @@
 =======
 	<h2>Logg inn</h2>
 	<p>Det er kun registrerte deltagere som før se deltagerlisten.</p>
+<<<<<<< HEAD
+>>>>>>> 233d75cef8c5d1ba4f03083ae1fd53219ff2324c
+=======
 >>>>>>> 233d75cef8c5d1ba4f03083ae1fd53219ff2324c
 	<p>
 		&nbsp;&nbsp;&nbsp;Anne<br />
