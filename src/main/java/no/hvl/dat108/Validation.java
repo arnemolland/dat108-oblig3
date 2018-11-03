@@ -12,15 +12,15 @@ public class Validation {
 	private String gender;
 
 	public Validation(HttpServletRequest request) {
-		this.firstName = request.getParameter("firstName");
-		this.lastName = request.getParameter("etternavn");
-		this.phone = request.getParameter("mobil");
+		this.firstName = request.getParameter("firstname");
+		this.lastName = request.getParameter("lastname");
+		this.phone = request.getParameter("phone");
 		this.password = request.getParameter("password");
-		this.password2 = request.getParameter("passwordRepetert");
-		this.gender = request.getParameter("kjonn");
+		this.password2 = request.getParameter("passwordconf");
+		this.gender = request.getParameter("gender");
 	}
 	
-	public boolean isAllInputGyldig() {
+	public boolean isAllInputValid() {
 		return isFirstNameValid() && 
 				isLastNameValid() && 
 				isPhoneValid() && 
@@ -30,7 +30,7 @@ public class Validation {
 	}
 
 	public boolean isGenderValid() {
-		return gender != null;
+		return gender == "male" || gender == "female";
 	}
 
 	public boolean isPassword2Valid() {
