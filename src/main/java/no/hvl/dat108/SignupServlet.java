@@ -1,6 +1,7 @@
 package no.hvl.dat108;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,8 +25,20 @@ public class SignupServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		String firstName = request.getParameter("firstname");
+		String lastName = request.getParameter("lastname");
+		String phoneNumber = request.getParameter("phone");
+		String gender = request.getParameter("kjonn");
+		String password = request.getParameter("password");
+		
+		ParticipantEAO peoa = new ParticipantEAO();
+		
+		PrintWriter out = response.getWriter();
+		response.setContentType("text/plain");
+		out.println(firstName + " " + lastName + " " + " " + phoneNumber + " "
+				+ gender + " " + password);
+		
 	}
 
     

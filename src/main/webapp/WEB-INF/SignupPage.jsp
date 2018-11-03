@@ -13,39 +13,39 @@
 </head>
 <body>
 	<h2>Påmelding</h2>
-	<form method="post" class="pure-form pure-form-aligned">
+	<form action="signup" method="post" class="pure-form pure-form-aligned">
 		<fieldset>
 			<div class="pure-control-group">
 				<label for="fornavn">Fornavn:</label> <input type="text"
-					name="fornavn" value="" /> 
+					name="firstname" value="" /> 
 					<font color="red">Ugyldig fornavn</font>
 			</div>
 			<div class="pure-control-group">
 				<label for="etternavn">Etternavn:</label> <input type="text"
-					name="etternavn" value="" /> 
+					name="lastname" value="" /> 
 					<font color="red">Ugyldig etternavn</font>
 			</div>
 			<div class="pure-control-group">
 				<label for="mobil">Mobil (8 siffer):</label> <input type="text"
-					name="mobil" value="" /> 
+					name="phone" value="" /> 
 					<font color="red">Ugyldig mobil</font>
 			</div>
 			<div class="pure-control-group">
 				<label for="password">Passord:</label> <input type="password"
-					name="passord" value="" /> 
+					name="password" value="" /> 
 					<font color="red">Ugyldig passord</font>
 			</div>
 			<div class="pure-control-group">
 				<label for="passordRepetert">Passord repetert:</label> <input
-					type="password" name="passordRepetert"
+					type="password" name="passwordconft"
 					value="" /> 
 					<font color="red">Passordene må være like</font>
 			</div>
 			<div class="pure-control-group">
-				<label for="kjonn">Kjønn:</label> <input type="radio" name="kjonn"
-					value="mann"
+				<label for="kjonn">Kjønn:</label> <input type="radio" name="gender"
+					value="male"
 					 />mann
-				<input type="radio" name="kjonn" value="kvinne"
+				<input type="radio" name="gender" value="female"
 					 />kvinne
 				<font color="red">Du må oppgi kjonn</font>
 			</div>
