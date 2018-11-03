@@ -1,4 +1,4 @@
-package somepackage;
+package no.hvl.dat108;
 
 import java.security.MessageDigest;
 import java.security.SecureRandom;
@@ -12,8 +12,8 @@ import javax.xml.bind.DatatypeConverter;
 public class PassordUtil {
     
     /*
-     * Man kunne godt gjort denne klassen mer fleksibel ved å bytte ut 
-     * konstanter med konstruktørparametre. På den annen side: MAN MÅ BRUKE
+     * Man kunne godt gjort denne klassen mer fleksibel ved ï¿½ bytte ut 
+     * konstanter med konstruktï¿½rparametre. Pï¿½ den annen side: MAN Mï¿½ BRUKE
      * SAMME OPPSETT OVERALT I EN APPLIKASJON.
      */
     
@@ -24,12 +24,12 @@ public class PassordUtil {
     
     /**
      * Denne metoden genererer en passordstreng for sikker lagring av passord.
-     * Passordstrengen inneholder både saltet som ble brukt i hashingen og 
+     * Passordstrengen inneholder bï¿½de saltet som ble brukt i hashingen og 
      * resultatet (digest-et) av hashingen.
      * 
-     * Det er ikke noen spesiell grunn til at salt og digest bør slås sammen
-     * til én streng. De kunne godt vært returnert som to verdier (som et par).
-     * Det er gjort slik fordi det gjorde API-et enkelt å bruke, en verdi inn,
+     * Det er ikke noen spesiell grunn til at salt og digest bï¿½r slï¿½s sammen
+     * til ï¿½n streng. De kunne godt vï¿½rt returnert som to verdier (som et par).
+     * Det er gjort slik fordi det gjorde API-et enkelt ï¿½ bruke, en verdi inn,
      * en verdi ut.
      * 
      * @param passord Passord som skal krypteres
@@ -101,17 +101,17 @@ public class PassordUtil {
             /* Eventuelle unntak her skyldes ugyldig angivelse av tegnsett i
              * passord.getBytes(PASSORD_TEGNSETT) eller ugyldig angivelse av
              * hash-algoritme i MessageDigest.getInstance(HASH_ALGORITME).
-             * Unntak vil normalt ikke plutselig oppstå under kjøring, og det er 
-             * derfor kanskje ikke nødvendig å håndtere dem her. Eller...?
+             * Unntak vil normalt ikke plutselig oppstï¿½ under kjï¿½ring, og det er 
+             * derfor kanskje ikke nï¿½dvendig ï¿½ hï¿½ndtere dem her. Eller...?
              * 
              * Hvis det skjer en feil, f.eks. at SHA-2 ikke er implementert
-             * i aktuell JVM, vil resultatet av å sluke unntaket bli at vi
+             * i aktuell JVM, vil resultatet av ï¿½ sluke unntaket bli at vi
              * returnerer en tom streng. Ved senere passord-matching vil alle
              * passord matche de som er generert med denne feilen.
              * 
              * Det er jo litt skummelt :(
              * 
-             * Hva burde vi gjort? ... Tja ... Noe burde vært gjort!
+             * Hva burde vi gjort? ... Tja ... Noe burde vï¿½rt gjort!
              */
         }
         return kryptert;
