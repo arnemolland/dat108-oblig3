@@ -7,7 +7,7 @@ CREATE TABLE participantlist (
 
 CREATE TABLE participants (
     gender CHAR,
-    name VARCHAR(20),
+    fullname VARCHAR(20),
     hashedpwd VARCHAR,
     phone VARCHAR(8),
     PARTICIPANTLIST_ID INTEGER,
