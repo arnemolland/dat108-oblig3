@@ -7,6 +7,7 @@ Levert av:
 * Arne Olai Molland
 * Sondre Gjellestad
 * Anders Graneng
+* Anders Mæhlum
 
 ## Viktig info om prosjektet
 
