@@ -1,6 +1,5 @@
 package no.hvl.dat108;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -13,7 +12,7 @@ public class Party {
     private int id;
 
     @OneToMany(mappedBy = "party")
-    private List<Participant> participants = new ArrayList<Participant>();
+    private List<Participant> participants;
 
     public List<Participant> getParticipantList() {
         return participants;

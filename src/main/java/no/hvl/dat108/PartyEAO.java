@@ -1,5 +1,7 @@
 package no.hvl.dat108;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -7,14 +9,14 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class PartyEAO {
 	
-    @PersistenceContext(name = "PartyPU")
+    @PersistenceContext(name = "partyPU")
     private EntityManager em;
-
-    public PartyEAO() {}
     
     public Party getParticipants() {
-        return em.find(Party.class, 1);
+    	Integer x = 1;
+        return em.find(Party.class, x);
     }
+
     public void updateParticipants(Party participantList) {
         em.merge(participantList);
     }

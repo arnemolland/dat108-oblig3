@@ -14,9 +14,9 @@ CREATE TABLE oblig3.participant (
     firstname VARCHAR(20),
 	lastname VARCHAR(20),
     hashedpwd VARCHAR,
-    PARTICIPANTLIST_ID INTEGER,
+    PARTY_ID INTEGER,
     CONSTRAINT pPK PRIMARY KEY (phone),
-    CONSTRAINT fk FOREIGN KEY (PARTICIPANTLIST_ID) REFERENCES oblig3.party(id)
+    CONSTRAINT fk FOREIGN KEY (PARTY_ID) REFERENCES oblig3.party(id)
 );
 
 INSERT INTO oblig3.party (id) values (1);

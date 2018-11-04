@@ -8,16 +8,15 @@ public class Participant {
 
 	@Id
 	private String phone;
+	
     private String gender;
     private String firstName;
     private String lastName;
     private String hashedpwd;
     
     @ManyToOne
-    @JoinColumn(name="plist_id" , referencedColumnName = "id")
+    @JoinColumn(name="PARTY_ID" , referencedColumnName = "id")
     private Party party;
-
-    public Participant() {}
 
     public Participant(String phone, String firstname, String lastName,String gender, 
     		String hashedpwd, Party party) {
