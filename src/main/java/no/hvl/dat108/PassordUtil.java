@@ -3,7 +3,6 @@ package no.hvl.dat108;
 import java.security.MessageDigest;
 import java.security.SecureRandom;
 import java.util.Arrays;
-
 import javax.xml.bind.DatatypeConverter;
 
 /**
