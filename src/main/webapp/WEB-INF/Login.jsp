@@ -20,10 +20,10 @@
 	<form method="post" class="pure-form pure-form-aligned">
 		<fieldset>
 			<div class="pure-control-group">
-				<label for="mobil">Mobil:</label> <input type="text" name="phone" />
+				<label for="phone">Mobil:</label> <input type="text" name="phone" />
 			</div>
 			<div class="pure-control-group">
-				<label for="passord">Passord:</label> <input type="password" name="password" />
+				<label for="password">Passord:</label> <input type="password" name="password" />
 			</div>
 			<div class="pure-controls">
 				<button type="submit" class="pure-button pure-button-primary">Logg
