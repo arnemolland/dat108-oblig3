@@ -6,19 +6,20 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
-@Table(schema = "public", name="participantlist")
-public class ParticipantList {
+@Table(schema = "oblig3", name="party")
+public class Party {
+	
     @Id
     private int id;
 
-    @OneToMany(mappedBy = "participantList")
-    private List<Participant> participantList = new ArrayList<>();
+    @OneToMany(mappedBy = "party")
+    private List<Participant> participants = new ArrayList<Participant>();
 
     public List<Participant> getParticipantList() {
-        return participantList;
+        return participants;
     }
 
     public void addParticipant(Participant participant) {
-        participantList.add(participant);
+        participants.add(participant);
     }
 }

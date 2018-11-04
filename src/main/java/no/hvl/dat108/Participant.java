@@ -3,7 +3,7 @@ package no.hvl.dat108;
 import javax.persistence.*;
 
 @Entity
-@Table(schema = "public", name="participants")
+@Table(schema = "oblig3", name="participant")
 public class Participant {
 
 	@Id
@@ -13,19 +13,18 @@ public class Participant {
     private String hashedpwd;
     
     @ManyToOne
-    @JoinColumn(name="plist_number" , referencedColumnName = "id")
-    private ParticipantList participantlist;
+    @JoinColumn(name="plist_id" , referencedColumnName = "id")
+    private Party party;
 
-    public Participant() {
+    public Participant() {}
 
-    }
-
-    public Participant(String gender, String fullname, String hashedpwd, String phone) {
+    public Participant(String gender, String fullname, String hashedpwd, String phone, Party party) {
         super();
         this.gender = gender;
         this.fullname = fullname;
         this.hashedpwd = hashedpwd;
         this.phone = phone;
+        this.party = party;
     }
 
 	public String getGender() {

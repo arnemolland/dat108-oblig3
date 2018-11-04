@@ -5,15 +5,17 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 @Stateless
-public class ParticipantEAO {
+public class PartyEAO {
 	
     @PersistenceContext(name = "participantsPU")
     private EntityManager em;
 
-    public ParticipantList getParticipants() {
-        return em.find(ParticipantList.class, 1);
+    public PartyEAO() {}
+    
+    public Party getParticipants() {
+        return em.find(Party.class, 1);
     }
-    public void updateParticipants(ParticipantList participantList) {
+    public void updateParticipants(Party participantList) {
         em.merge(participantList);
     }
 }

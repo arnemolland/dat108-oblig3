@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "SignupServlet", urlPatterns = {"signup"})
 public class SignupServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
+    
+    private PartyEAO peoa = new PartyEAO();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	request.getRequestDispatcher("WEB-INF/SignupPage.jsp").forward(request, response);
@@ -27,21 +29,20 @@ public class SignupServlet extends HttpServlet {
 		String gender = request.getParameter("kjonn");
 		String password = request.getParameter("password");
 		
-		Validation isSafe = new Validation(request);
-		
-		if (!isSafe.isAllInputValid()) {
-			request.getRequestDispatcher("WEB-INF/SignupPage.jsp").forward(request, response);
-			return;
-		}
-		
+//		Validation isSafe = new Validation(request);
+//		
+//		if (!isSafe.isAllInputValid()) {
+//			request.getRequestDispatcher("WEB-INF/SignupPage.jsp").forward(request, response);
+//			return;
+//		}
+//		
 		String hashedPsw = PassordUtil.krypterPassord(password);
 		
-		ParticipantEAO peoa = new ParticipantEAO();
+		Party participants = peoa.getParticipants();
 		Participant newParticipant = new Participant(gender, firstName + " " + lastName,
-				hashedPsw, phoneNumber);
-		ParticipantList ParticipantList = peoa.getParticipants();
-		ParticipantList.addParticipant(newParticipant);
-		peoa.updateParticipants(ParticipantList);
+				hashedPsw, phoneNumber,participants);
+		participants.addParticipant(newParticipant);
+		peoa.updateParticipants(participants);
 		
 		request.setAttribute("firstname", firstName);
 		request.setAttribute("lastname", lastName);
