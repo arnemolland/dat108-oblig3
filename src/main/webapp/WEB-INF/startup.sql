@@ -11,7 +11,8 @@ CREATE TABLE oblig3.party (
 CREATE TABLE oblig3.participant (
 	phone VARCHAR(8),
     gender VARCHAR(6),
-    fullname VARCHAR(20),
+    firstname VARCHAR(20),
+	lastname VARCHAR(20),
     hashedpwd VARCHAR,
     PARTICIPANTLIST_ID INTEGER,
     CONSTRAINT pPK PRIMARY KEY (phone),
