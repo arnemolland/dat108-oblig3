@@ -1,11 +1,10 @@
 DROP SCHEMA IF EXISTS oblig3 CASCADE;
 
-
 CREATE SCHEMA oblig3;
 
 CREATE TABLE oblig3.party (
-    id INTEGER,
-    CONSTRAINT plPK PRIMARY KEY (id)
+    id INTEGER NOT NULL,
+    CONSTRAINT plPK PRIMARY KEY (id) 
 );
 
 CREATE TABLE oblig3.participant (

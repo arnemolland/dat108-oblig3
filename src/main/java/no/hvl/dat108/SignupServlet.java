@@ -14,7 +14,7 @@ public class SignupServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     
     @EJB
-    private PartyEAO peoa = new PartyEAO();
+    private PartyEAO partyEAO = new PartyEAO();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	request.getRequestDispatcher("WEB-INF/SignupPage.jsp").forward(request, response);
@@ -40,11 +40,11 @@ public class SignupServlet extends HttpServlet {
 //		
 		String hashedPsw = PassordUtil.krypterPassord(password);
 		
-		Party participants = peoa.getParticipants();
+		Party party = partyEAO.getParty();
 		Participant newParticipant = new Participant(phoneNumber, firstName, lastName, gender,
-				hashedPsw, participants);
-		participants.addParticipant(newParticipant);
-		peoa.updateParticipants(participants);
+				hashedPsw, party);
+		party.addParticipant(newParticipant);
+		partyEAO.updateParty(party);
 		
 		request.setAttribute("firstname", firstName);
 		request.setAttribute("lastname", lastName);

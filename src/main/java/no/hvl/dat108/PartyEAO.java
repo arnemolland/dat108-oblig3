@@ -12,12 +12,12 @@ public class PartyEAO {
     @PersistenceContext(name = "partyPU")
     private EntityManager em;
     
-    public Party getParticipants() {
+    public Party getParty() {
     	Integer x = 1;
         return em.find(Party.class, x);
     }
 
-    public void updateParticipants(Party participantList) {
+    public void updateParty(Party participantList) {
         em.merge(participantList);
     }
 }
