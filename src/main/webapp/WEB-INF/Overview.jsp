@@ -8,11 +8,11 @@
 	<meta charset="UTF-8">
 	<!-- Fra https://purecss.io/ -->
 	<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
-	<title>Deltagerliste</title>
+	<title>Deltakerliste</title>
 </head>
 
 <body>
-	<h2>Deltagerliste</h2>
+	<h2>Deltakerliste</h2>
 	<table class="pure-table">
 		<tr bgcolor="#cccccc">
 			<th>Kjønn</th>
@@ -36,7 +36,7 @@
 		</tr>
 	</table>
 	<p>
-		<a href="loggut">Ferdig</a>
+		<a href="logout">Ferdig</a>
 	</p>
 </body>
 

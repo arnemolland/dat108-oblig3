@@ -1,24 +1,19 @@
 package no.hvl.dat108;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 @WebServlet(name = "SignupServlet", urlPatterns = {"signup"})
 public class SignupServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
     	request.getRequestDispatcher("WEB-INF/SignupPage.jsp").forward(request, response);
-		
 	}
 
 	/**
@@ -34,12 +29,12 @@ public class SignupServlet extends HttpServlet {
 		
 		Validation isSafe = new Validation(request);
 		
-		if(!isSafe.isAllInputValid()) {
-			
+		if (!isSafe.isAllInputValid()) {
+			request.getRequestDispatcher("WEB-INF/SignupPage.jsp").forward(request, response);
+			return;
 		}
 		
 		String hashedPsw = PassordUtil.krypterPassord(password);
-		
 		
 		ParticipantEAO peoa = new ParticipantEAO();
 		Participant newParticipant = new Participant(gender, firstName + " " + lastName,
@@ -54,10 +49,5 @@ public class SignupServlet extends HttpServlet {
 		request.setAttribute("gender", gender);
 		
 		request.getRequestDispatcher("WEB-INF/SignupConfirmation.jsp").forward(request, response);
-		
 	}
-
-    
-    
-    
 }

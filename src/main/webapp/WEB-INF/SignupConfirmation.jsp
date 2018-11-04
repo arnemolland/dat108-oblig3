@@ -23,6 +23,6 @@
 		&nbsp;&nbsp;&nbsp;Annesen<br />
 		&nbsp;&nbsp;&nbsp;44554455<br /> &nbsp;&nbsp;&nbsp;kvinne
 	</p>
-	<a href="deltagerliste">Gå til deltagerlisten</a>
+	<a href="overview">Gå til deltagerlisten</a>
 </body>
 </html>

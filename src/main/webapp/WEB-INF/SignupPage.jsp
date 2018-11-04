@@ -15,17 +15,17 @@
 	<form action="signup" method="post" class="pure-form pure-form-aligned">
 		<fieldset>
 			<div class="pure-control-group">
-				<label for="fornavn">Fornavn:</label> <input type="text"
+				<label for="firstname">Fornavn:</label> <input type="text"
 					name="firstname" value="" /> 
 					<font color="red">Ugyldig fornavn</font>
 			</div>
 			<div class="pure-control-group">
-				<label for="etternavn">Etternavn:</label> <input type="text"
+				<label for="lastname">Etternavn:</label> <input type="text"
 					name="lastname" value="" /> 
 					<font color="red">Ugyldig etternavn</font>
 			</div>
 			<div class="pure-control-group">
-				<label for="mobil">Mobil (8 siffer):</label> <input type="text"
+				<label for="phone">Mobil (8 siffer):</label> <input type="text"
 					name="phone" value="" /> 
 					<font color="red">Ugyldig mobil</font>
 			</div>
@@ -35,17 +35,15 @@
 					<font color="red">Ugyldig passord</font>
 			</div>
 			<div class="pure-control-group">
-				<label for="passordRepetert">Passord repetert:</label> <input
-					type="password" name="passwordconft"
+				<label for="passwordconf">Passord repetert:</label> <input
+					type="password" name="passwordconf"
 					value="" /> 
 					<font color="red">Passordene må være like</font>
 			</div>
 			<div class="pure-control-group">
-				<label for="kjonn">Kjønn:</label> <input type="radio" name="gender"
-					value="male"
-					 />mann
-				<input type="radio" name="gender" value="female"
-					 />kvinne
+				<label for="gender">Kjønn:</label>
+				<input type="radio" name="gender" value="male"/>mann
+				<input type="radio" name="gender" value="female"/>kvinne
 				<font color="red">Du må oppgi kjønn</font>
 			</div>
 			<div class="pure-controls">
@@ -55,6 +53,8 @@
 		</fieldset>
 	</form>
 
-	<script src="/dat108-oblig3/js/validation.js"></script>
+	<a href="login">Jeg har allerede en bruker</a> 
+
+	<script src="js/validation.js"></script>
 </body>
 </html>
