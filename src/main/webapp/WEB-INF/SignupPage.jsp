@@ -1,18 +1,17 @@
-
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <!-- Fra https://purecss.io/ -->
 <link rel="stylesheet"
 	href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
-<title>Påmelding</title>
+<title>PÃ¥melding</title>
 </head>
 <body>
-	<h2>Påmelding</h2>
+	<h2>PÃ¥melding</h2>
 	<form action="signup" method="post" class="pure-form pure-form-aligned">
 		<fieldset>
 			<div class="pure-control-group">
@@ -39,21 +38,23 @@
 				<label for="passordRepetert">Passord repetert:</label> <input
 					type="password" name="passwordconft"
 					value="" /> 
-					<font color="red">Passordene må være like</font>
+					<font color="red">Passordene mÃ¥ vÃ¦re like</font>
 			</div>
 			<div class="pure-control-group">
-				<label for="kjonn">Kjønn:</label> <input type="radio" name="gender"
+				<label for="kjonn">KjÃ¸nn:</label> <input type="radio" name="gender"
 					value="male"
 					 />mann
 				<input type="radio" name="gender" value="female"
 					 />kvinne
-				<font color="red">Du må oppgi kjonn</font>
+				<font color="red">Du mÃ¥ oppgi kjÃ¸nn</font>
 			</div>
 			<div class="pure-controls">
 				<button type="submit" class="pure-button pure-button-primary">Meld
-					meg på</button>
+					meg pÃ¥</button>
 			</div>
 		</fieldset>
 	</form>
+
+	<script src="/dat108-oblig3/js/validation.js"></script>
 </body>
 </html>
