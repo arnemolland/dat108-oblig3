@@ -11,12 +11,7 @@ public class ParticipantList {
     @Id
     private int id;
 
-    @OneToMany(
-        cascade = CascadeType.ALL,
-        orphanRemoval = true,
-        fetch = FetchType.EAGER,
-        mappedBy = "participantlist"
-    )
+    @OneToMany(mappedBy = "participantList")
     private List<Participant> participantList = new ArrayList<>();
 
     public List<Participant> getParticipantList() {

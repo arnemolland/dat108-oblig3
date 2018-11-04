@@ -47,19 +47,13 @@ public class SignupServlet extends HttpServlet {
 		ParticipantList ParticipantList = peoa.getParticipants();
 		ParticipantList.addParticipant(newParticipant);
 		peoa.updateParticipants(ParticipantList);
-	
-		HttpSession session = request.getSession(false);
-		if(session == null) {
-			session = request.getSession(true);
-			session.setMaxInactiveInterval(60);
-		}
 		
-		session.setAttribute("firstname", firstName);
-		session.setAttribute("lastname", lastName);
-		session.setAttribute("phonenumber", phoneNumber);
-		session.setAttribute("gender", gender);
-
-		response.sendRedirect("WEB-INF/SignupConfirmation.jsp");
+		request.setAttribute("firstname", firstName);
+		request.setAttribute("lastname", lastName);
+		request.setAttribute("phonenumber", phoneNumber);
+		request.setAttribute("gender", gender);
+		
+		request.getRequestDispatcher("WEB-INF/SignupConfirmation.jsp").forward(request, response);
 		
 	}
 

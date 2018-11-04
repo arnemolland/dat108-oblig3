@@ -6,24 +6,24 @@ import javax.persistence.*;
 @Table(schema = "public", name="participants")
 public class Participant {
 
-    @Column(name = "gender")
+	@Id
+	private String phone;
     private String gender;
-    @Column(name = "fullname")
-    private String name;
-    @Column(name = "hashedpwd")
+    private String fullname;
     private String hashedpwd;
-    @Id
-    @Column(name = "phone")
-    private String phone;
+    
+    @ManyToOne
+    @JoinColumn(name="plist_number" , referencedColumnName = "id")
+    private ParticipantList participantlist;
 
     public Participant() {
 
     }
 
-    public Participant(String gender, String name, String hashedpwd, String phone) {
+    public Participant(String gender, String fullname, String hashedpwd, String phone) {
         super();
         this.gender = gender;
-        this.name = name;
+        this.fullname = fullname;
         this.hashedpwd = hashedpwd;
         this.phone = phone;
     }
@@ -36,12 +36,12 @@ public class Participant {
 		this.gender = gender;
 	}
 
-	public String getName() {
-		return name;
+	public String getFullname() {
+		return fullname;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setFullame(String name) {
+		this.fullname = name;
 	}
 
 	public String getHashedpwd() {

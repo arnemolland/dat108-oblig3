@@ -6,6 +6,7 @@ import javax.persistence.PersistenceContext;
 
 @Stateless
 public class ParticipantEAO {
+	
     @PersistenceContext(name = "participantsPU")
     private EntityManager em;
 
