@@ -9,7 +9,8 @@ public class Participant {
 	@Id
 	private String phone;
     private String gender;
-    private String fullname;
+    private String firstName;
+    private String lastName;
     private String hashedpwd;
     
     @ManyToOne
@@ -18,12 +19,14 @@ public class Participant {
 
     public Participant() {}
 
-    public Participant(String gender, String fullname, String hashedpwd, String phone, Party party) {
+    public Participant(String phone, String firstname, String lastName,String gender, 
+    		String hashedpwd, Party party) {
         super();
-        this.gender = gender;
-        this.fullname = fullname;
-        this.hashedpwd = hashedpwd;
         this.phone = phone;
+        this.firstName = firstname;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.hashedpwd = hashedpwd;
         this.party = party;
     }
 
@@ -35,12 +38,20 @@ public class Participant {
 		this.gender = gender;
 	}
 
-	public String getFullname() {
-		return fullname;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setFullame(String name) {
-		this.fullname = name;
+	public void setFirstName(String name) {
+		this.firstName = name;
+	}
+	
+	public String getLastName() {
+		return this.lastName;
+	}
+	
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public String getHashedpwd() {

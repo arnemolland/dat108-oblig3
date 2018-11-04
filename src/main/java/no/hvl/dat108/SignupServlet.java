@@ -26,7 +26,7 @@ public class SignupServlet extends HttpServlet {
 		String firstName = request.getParameter("firstname");
 		String lastName = request.getParameter("lastname");
 		String phoneNumber = request.getParameter("phone");
-		String gender = request.getParameter("kjonn");
+		String gender = request.getParameter("gender");
 		String password = request.getParameter("password");
 		
 //		Validation isSafe = new Validation(request);
@@ -39,8 +39,8 @@ public class SignupServlet extends HttpServlet {
 		String hashedPsw = PassordUtil.krypterPassord(password);
 		
 		Party participants = peoa.getParticipants();
-		Participant newParticipant = new Participant(gender, firstName + " " + lastName,
-				hashedPsw, phoneNumber,participants);
+		Participant newParticipant = new Participant(phoneNumber, firstName, lastName, gender,
+				hashedPsw, participants);
 		participants.addParticipant(newParticipant);
 		peoa.updateParticipants(participants);
 		
