@@ -7,7 +7,7 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class PartyEAO {
 	
-    @PersistenceContext(name = "participantsPU")
+    @PersistenceContext(name = "PartyPU")
     private EntityManager em;
 
     public PartyEAO() {}

@@ -1,18 +1,21 @@
-DROP TABLE IF EXISTS participants,participantlist;
+DROP SCHEMA IF EXISTS oblig3 CASCADE;
 
-CREATE TABLE participantlist (
+
+CREATE SCHEMA oblig3;
+
+CREATE TABLE oblig3.party (
     id INTEGER,
-    PRIMARY KEY (id)
+    CONSTRAINT plPK PRIMARY KEY (id)
 );
 
-CREATE TABLE participants (
+CREATE TABLE oblig3.participant (
+	phone VARCHAR(8),
     gender VARCHAR(6),
     fullname VARCHAR(20),
     hashedpwd VARCHAR,
-    phone VARCHAR(8),
     PARTICIPANTLIST_ID INTEGER,
-    PRIMARY KEY (phone),
-    CONSTRAINT fk FOREIGN KEY (PARTICIPANTLIST_ID) REFERENCES participantlist(id)
+    CONSTRAINT pPK PRIMARY KEY (phone),
+    CONSTRAINT fk FOREIGN KEY (PARTICIPANTLIST_ID) REFERENCES oblig3.party(id)
 );
 
-INSERT INTO participantlist (id) values (1);
+INSERT INTO oblig3.party (id) values (1);
